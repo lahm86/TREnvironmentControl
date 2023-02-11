@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TREnvironmentEditor">
+      <HintPath>..\Deps\TREnvironmentEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="TRFDControl">
+      <HintPath>..\Deps\TRFDControl.dll</HintPath>
+    </Reference>
+    <Reference Include="TRLevelReader">
+      <HintPath>..\Deps\TRLevelReader.dll</HintPath>
+    </Reference>
+    <Reference Include="TRRandomizerCore">
+      <HintPath>..\Deps\TRRandomizerCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
