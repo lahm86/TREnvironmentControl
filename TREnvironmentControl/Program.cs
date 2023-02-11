@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TREnvironmentControl
 {
@@ -28,7 +29,31 @@ namespace TREnvironmentControl
 
         private static void GenerateTR1Environment()
         {
-            throw new NotImplementedException();
+            List<BaseTR1Control> tr1Controls = new List<BaseTR1Control>
+            {
+                new TR1CavesControl(),
+                new TR1VilcabambaControl(),
+                new TR1ValleyControl(),
+                new TR1ToQControl(),
+                new TR1FollyControl(),
+                new TR1ColosseumControl(),
+                new TR1MidasControl(),
+                new TR1CisternControl(),
+                new TR1ToTControl(),
+                new TR1KhamoonControl(),
+                new TR1ObeliskControl(),
+                new TR1SanctuaryControl(),
+                new TR1MinesControl(),
+                new TR1AtlantisControl(),
+                new TR1PyramidControl()
+            };
+
+            foreach (BaseTR1Control control in tr1Controls)
+            {
+                Console.WriteLine("Generating for {0}", control.Level);
+                control.GenerateSecretRoomMapping();
+                control.GenerateEnvironmentMapping();
+            }
         }
 
         private static void GenerateTR2Environment()

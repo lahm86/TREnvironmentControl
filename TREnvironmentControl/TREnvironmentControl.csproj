@@ -10,6 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="RectanglePacker">
+      <HintPath>..\Deps\RectanglePacker.dll</HintPath>
+    </Reference>
     <Reference Include="TREnvironmentEditor">
       <HintPath>..\Deps\TREnvironmentEditor.dll</HintPath>
     </Reference>
@@ -19,8 +22,14 @@
     <Reference Include="TRLevelReader">
       <HintPath>..\Deps\TRLevelReader.dll</HintPath>
     </Reference>
+    <Reference Include="TRModelTransporter">
+      <HintPath>..\Deps\TRModelTransporter.dll</HintPath>
+    </Reference>
     <Reference Include="TRRandomizerCore">
       <HintPath>..\Deps\TRRandomizerCore.dll</HintPath>
+    </Reference>
+    <Reference Include="TRViewInterop">
+      <HintPath>..\Deps\TRViewInterop.dll</HintPath>
     </Reference>
   </ItemGroup>
 
