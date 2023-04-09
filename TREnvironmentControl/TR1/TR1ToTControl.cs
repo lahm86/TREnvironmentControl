@@ -4510,6 +4510,38 @@ namespace TREnvironmentControl
                     {
                         new EMCreateRoomFunction
                         {
+                            Comments = "Create a pushblock buffer room.",
+                            EMType = EMType.CreateRoom,
+                            Height = 4,
+                            Width = 3,
+                            Depth = 3,
+                            Textures = new EMTextureGroup
+                            {
+                            },
+                            AmbientLighting = level.Rooms[19].AmbientIntensity,
+                            DefaultVertex = new EMRoomVertex
+                            {
+                                Lighting = level.Rooms[46].RoomData.Vertices[level.Rooms[46].RoomData.Rectangles[0].Vertices[2]].Lighting
+                            },
+                            Lights = new EMRoomLight[]
+                            {
+                            },
+                            LinkedLocation = new EMLocation
+                            {
+                                X = 57856,
+                                Y = -3328,
+                                Z = 1536,
+                                Room = 19
+                            },
+                            Location = new EMLocation
+                            {
+                                X = 57856 - 1024 - 512,
+                                Y = -17408-3072,
+                                Z = 6656 - 1024 - 512
+                            },
+                        },
+                        new EMCreateRoomFunction
+                        {
                             Comments = "Another variant of above.",
                             EMType = EMType.CreateRoom,
                             Tags = new List<EMTag>
@@ -4908,6 +4940,24 @@ namespace TREnvironmentControl
                                 Room = 19
                             }
                         },
+                        new EMVerticalCollisionalPortalFunction
+                        {
+                            EMType = EMType.VerticalCollisionalPortal,
+                            Ceiling = new EMLocation
+                            {
+                                X = 57856,
+                                Y = -20480,
+                                Z = 6656,
+                                Room = -4
+                            },
+                            Floor= new EMLocation
+                            {
+                                X = 57856,
+                                Y = -20480+1024,
+                                Z = 6656,
+                                Room = -2
+                            }
+                        },
                         new EMModifyFaceFunction
                         {
                             Comments = "Rotate some floor faces.",
@@ -5024,9 +5074,9 @@ namespace TREnvironmentControl
                             Location = new EMLocation
                             {
                                 X = 57856,
-                                Y = -17408-3072,
+                                Y = -17408-4096,
                                 Z = 6656,
-                                Room = -2
+                                Room = -4
                             }
                         },
                         new EMAddEntityFunction
