@@ -3344,23 +3344,28 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "Placeholder for easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads in hard mode.",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = -1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = -1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads1.json"))[TRLevelNames.CISTERN]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads1.json"))[TRLevelNames.CISTERN]
                             },
                             new EMRefaceFunction
                             {
@@ -3368,7 +3373,7 @@ namespace TREnvironmentControl
                                 EMType = EMType.Reface,
                                 TextureMap = new EMTextureMap
                                 {
-                                    [33] = new EMGeometryMap
+                                    [780] = new EMGeometryMap
                                     {
                                         [-1] = new Dictionary<EMTextureFaceType, int[]>
                                         {
@@ -3523,23 +3528,28 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "Placeholder for easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads in hard mode.",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = -1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = -1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads2.json"))[TRLevelNames.CISTERN]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads2.json"))[TRLevelNames.CISTERN]
                             },
                             new EMRefaceFunction
                             {
@@ -3547,7 +3557,7 @@ namespace TREnvironmentControl
                                 EMType = EMType.Reface,
                                 TextureMap = new EMTextureMap
                                 {
-                                    [33] = new EMGeometryMap
+                                    [780] = new EMGeometryMap
                                     {
                                         [-1] = new Dictionary<EMTextureFaceType, int[]>
                                         {
@@ -3702,23 +3712,28 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "Placeholder for easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads in hard mode.",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = -1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = -1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads3.json"))[TRLevelNames.CISTERN]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads3.json"))[TRLevelNames.CISTERN]
                             },
                             new EMRefaceFunction
                             {
@@ -3726,7 +3741,7 @@ namespace TREnvironmentControl
                                 EMType = EMType.Reface,
                                 TextureMap = new EMTextureMap
                                 {
-                                    [33] = new EMGeometryMap
+                                    [780] = new EMGeometryMap
                                     {
                                         [-1] = new Dictionary<EMTextureFaceType, int[]>
                                         {
@@ -3915,23 +3930,28 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "Placeholder for easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads in hard mode.",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = -1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = -1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads4.json"))[TRLevelNames.CISTERN]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cisternpuzzleantipads4.json"))[TRLevelNames.CISTERN]
                             },
                             new EMRefaceFunction
                             {
@@ -3939,20 +3959,13 @@ namespace TREnvironmentControl
                                 EMType = EMType.Reface,
                                 TextureMap = new EMTextureMap
                                 {
-                                    [128] = new EMGeometryMap
+                                    [780] = new EMGeometryMap
                                     {
                                         [-1] = new Dictionary<EMTextureFaceType, int[]>
                                         {
-                                            [EMTextureFaceType.Rectangles] = new int[] { 20, 67, 111, 80, 7, 70 }
+                                            [EMTextureFaceType.Rectangles] = new int[] { 20, 67, 111, 80, 7,  }
                                         }
                                     },
-                                    [111] = new EMGeometryMap
-                                    {
-                                        [-1] = new Dictionary<EMTextureFaceType, int[]>
-                                        {
-                                            [EMTextureFaceType.Rectangles] = new int[] { 114,88,47,109,85,64,45,14,82,60,43,106,103,58,41,98,0 }
-                                        }
-                                    }
                                 }
                             }
                         }

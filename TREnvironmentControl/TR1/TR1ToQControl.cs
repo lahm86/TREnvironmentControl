@@ -2455,6 +2455,38 @@ namespace TREnvironmentControl
                     {
                         new EMCreateRoomFunction
                         {
+                            Comments = "Create a pushblock buffer room.",
+                            EMType = EMType.CreateRoom,
+                            Height = 4,
+                            Width = 3,
+                            Depth = 3,
+                            Textures = new EMTextureGroup
+                            {
+                            },
+                            AmbientLighting = level.Rooms[32].AmbientIntensity,
+                            DefaultVertex = new EMRoomVertex
+                            {
+                                Lighting = level.Rooms[11].RoomData.Vertices[level.Rooms[11].RoomData.Rectangles[16].Vertices[2]].Lighting
+                            },
+                            Lights = new EMRoomLight[]
+                            {
+                            },
+                            LinkedLocation = new EMLocation
+                            {
+                                X = 49664,
+                                Y = 6656,
+                                Z = 43520,
+                                Room = 37
+                            },
+                            Location = new EMLocation
+                            {
+                                X = 52736-512-1024,
+                                Y = -1536+1024,
+                                Z = 39424-512-1024,
+                            },
+                        },
+                        new EMCreateRoomFunction
+                        {
                             Comments = "Make a trap/puzzle room off room 37.",
                             EMType = EMType.CreateRoom,
                             Tags = new List<EMTag>
@@ -2639,6 +2671,24 @@ namespace TREnvironmentControl
                                 Y = 5632 + 1024,
                                 Z = 43520,
                                 Room = 37
+                            }
+                        },
+                        new EMVerticalCollisionalPortalFunction
+                        {
+                            EMType = EMType.VerticalCollisionalPortal,
+                            Ceiling = new EMLocation
+                            {
+                                X = 52736,
+                                Y = -1536+1024,
+                                Z = 39424,
+                                Room = -3
+                            },
+                            Floor = new EMLocation
+                            {
+                                X = 52736,
+                                Y = -1536+2048,
+                                Z = 39424,
+                                Room = -1
                             }
                         },
                         new EMVisibilityPortalFunction
@@ -3115,26 +3165,6 @@ namespace TREnvironmentControl
                             }
                         },
 
-                        //new EMPlaceholderFunction
-                        //{
-                        //    Comments = "Placeholder for easy variant.",
-                        //    EMType = EMType.NOOP,
-                        //    HardVariant = new EMMoveSlotFunction
-                        //    {
-                        //        Comments = "Hard mode moves the lever to the other side of the room - tougher jumps.",
-                        //        EMType = EMType.MoveSlot,
-                        //        EntityIndex = -2,
-                        //        Location = new EMLocation
-                        //        {
-                        //            X = 46592,
-                        //            Y = 2560,
-                        //            Z = 36352,
-                        //            Room = -1,
-                        //            Angle = -32768
-                        //        },
-                        //    }
-                        //},
-
                         new EMPlaceholderFunction
                         {
                             Comments = "Placeholder for easy mode.",
@@ -3259,25 +3289,6 @@ namespace TREnvironmentControl
                             }
                         },
 
-                        //new EMAddEntityFunction
-                        //{
-                        //    Comments= "Add a pickup on the other side in easy mode for temptation.",
-                        //    EMType = EMType.AddEntity,
-                        //    TypeID = (short)TREntities.Uzis_S_P,
-                        //    Intensity = level.Entities[27].Intensity,
-                        //    Location = new EMLocation
-                        //    {
-                        //        X = 46592,
-                        //        Y = 2560,
-                        //        Z = 36352,
-                        //        Room = -1
-                        //    },
-                        //    HardVariant = new EMPlaceholderFunction
-                        //    {
-                        //        Comments = "No pickup in hard mode.",
-                        //        EMType = EMType.NOOP
-                        //    }
-                        //},
                         new EMAddEntityFunction
                         {
                             Comments= "Add another block and its trigger in easy mode.",
@@ -3288,9 +3299,9 @@ namespace TREnvironmentControl
                             Location = new EMLocation
                             {
                                 X = 52736,
-                                Y = -512,
+                                Y = -512-1024,
                                 Z = 39424,
-                                Room = -1
+                                Room = -3
                             },
                             HardVariant = new EMPlaceholderFunction
                             {
@@ -3517,7 +3528,7 @@ namespace TREnvironmentControl
             g = 0;
             foreach (EMLocation loc in JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("toqthor.json"))[Level])
             {
-                mapping.AllWithin[1][2].Insert(2 + g++, new EMVerticalCollisionalPortalFunction
+                mapping.AllWithin[1][2].Insert(3 + g++, new EMVerticalCollisionalPortalFunction
                 {
                     Comments = "Vertical portal.",
                     EMType = EMType.VerticalCollisionalPortal,

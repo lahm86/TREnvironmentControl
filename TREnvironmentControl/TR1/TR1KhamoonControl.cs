@@ -4142,24 +4142,6 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
-                            {
-                                Comments = "Antipads for above.",
-                                EMType = EMType.Trigger,
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("khamoonantipads1.json"))[TRLevelNames.KHAMOON],
-                                Trigger = new EMTrigger
-                                {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
-                                    {
-                                        new EMTriggerAction
-                                        {
-                                            Parameter = 2
-                                        }
-                                    }
-                                }
-                            },
                             new EMRefaceFunction
                             {
                                 Comments = "Refacing for above.",
@@ -4271,24 +4253,6 @@ namespace TREnvironmentControl
                                 {
                                     Mask = 1 << 4,
                                     TrigType = FDTrigType.Pad,
-                                    Actions = new List<EMTriggerAction>
-                                    {
-                                        new EMTriggerAction
-                                        {
-                                            Parameter = 2
-                                        }
-                                    }
-                                }
-                            },
-                            new EMTriggerFunction
-                            {
-                                Comments = "Antipads for above.",
-                                EMType = EMType.Trigger,
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("khamoonantipads2.json"))[TRLevelNames.KHAMOON],
-                                Trigger = new EMTrigger
-                                {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
                                     Actions = new List<EMTriggerAction>
                                     {
                                         new EMTriggerAction

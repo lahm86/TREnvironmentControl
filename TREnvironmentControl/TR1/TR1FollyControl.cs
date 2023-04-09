@@ -2679,7 +2679,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            126,127,227
+                                            77,169,58
                                         }
                                     },
                                     new TRFace3
@@ -2687,7 +2687,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            294,295,371
+                                            113,171,94
                                         }
                                     },
                                     new TRFace3
@@ -2695,7 +2695,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            438,439,535
+                                            52,54,74
                                         }
                                     },
                                     new TRFace3
@@ -2703,7 +2703,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            274,328,275,
+                                            90,91,111
                                         }
                                     },
                                     new TRFace3
@@ -2711,32 +2711,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            414,468,415,
-                                        }
-                                    },
-
-                                    new TRFace3
-                                    {
-                                        Texture = 75,
-                                        Vertices = new ushort[]
-                                        {
-                                            151,177,148,
-                                        }
-                                    },
-                                    new TRFace3
-                                    {
-                                        Texture = 75,
-                                        Vertices = new ushort[]
-                                        {
-                                            262,321,261
-                                        }
-                                    },
-                                    new TRFace3
-                                    {
-                                        Texture = 75,
-                                        Vertices = new ushort[]
-                                        {
-                                            402,500,401,
+                                            33,25,164
                                         }
                                     },
 
@@ -2745,7 +2720,7 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            170,169,249,
+                                            82,64,166
                                         }
                                     },
                                     new TRFace3
@@ -2753,7 +2728,32 @@ namespace TREnvironmentControl
                                         Texture = 75,
                                         Vertices = new ushort[]
                                         {
-                                            318,317,460
+                                            119,101,168
+                                        }
+                                    },
+                                    new TRFace3
+                                    {
+                                        Texture = 75,
+                                        Vertices = new ushort[]
+                                        {
+                                            47,56,24
+                                        }
+                                    },
+
+                                    new TRFace3
+                                    {
+                                        Texture = 75,
+                                        Vertices = new ushort[]
+                                        {
+                                            76,92,63
+                                        }
+                                    },
+                                    new TRFace3
+                                    {
+                                        Texture = 75,
+                                        Vertices = new ushort[]
+                                        {
+                                            109,126,100
                                         }
                                     }
                                 }
@@ -5983,6 +5983,7 @@ namespace TREnvironmentControl
                         },
                     }
                 },
+                
                 new EMEditorGroupedSet
                 {
                     Leader = new EMEditorSet
@@ -6349,8 +6350,8 @@ namespace TREnvironmentControl
                                 Location = new EMLocation
                                 {
                                     X = 35328,
-                                    Y = 13824,
-                                    Z = 44544,
+                                    Y = 13568,
+                                    Z = 42496,
                                     Room = 20,
                                     Angle = -16384
                                 }
@@ -6365,7 +6366,7 @@ namespace TREnvironmentControl
                                     {
                                         [20] = new Dictionary<EMTextureFaceType, int[]>
                                         {
-                                            [EMTextureFaceType.Rectangles] = new int[] { 27 }
+                                            [EMTextureFaceType.Rectangles] = new int[] { 18 }
                                         }
                                     }
                                 }
@@ -6624,6 +6625,7 @@ namespace TREnvironmentControl
                         },
                     }
                 },
+                
                 new EMEditorGroupedSet
                 {
                     Leader = new EMEditorSet

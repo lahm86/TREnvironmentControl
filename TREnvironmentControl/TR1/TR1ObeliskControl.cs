@@ -4572,27 +4572,32 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "No antipads in easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Antipads in hard mode.",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = 0
-                                        },
-                                        new EMTriggerAction
-                                        {
-                                            Parameter = 1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 0
+                                            },
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads1.json"))[TRLevelNames.OBELISK]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads1.json"))[TRLevelNames.OBELISK]
                             },
                             new EMRefaceFunction
                             {
@@ -4789,27 +4794,32 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "No antipads in easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = 0
-                                        },
-                                        new EMTriggerAction
-                                        {
-                                            Parameter = 1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 0
+                                            },
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads2.json"))[TRLevelNames.OBELISK]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads2.json"))[TRLevelNames.OBELISK]
                             },
                             new EMRefaceFunction
                             {
@@ -5349,27 +5359,32 @@ namespace TREnvironmentControl
                                     }
                                 }
                             },
-                            new EMTriggerFunction
+                            new EMPlaceholderFunction
                             {
-                                Comments = "Puzzle antipads",
-                                EMType = EMType.Trigger,
-                                Trigger = new EMTrigger
+                                Comments = "No antipads in easy mode.",
+                                EMType = EMType.NOOP,
+                                HardVariant = new EMTriggerFunction
                                 {
-                                    Mask = 31,
-                                    TrigType = FDTrigType.Antipad,
-                                    Actions = new List<EMTriggerAction>
+                                    Comments = "Puzzle antipads",
+                                    EMType = EMType.Trigger,
+                                    Trigger = new EMTrigger
                                     {
-                                        new EMTriggerAction
+                                        Mask = 31,
+                                        TrigType = FDTrigType.Antipad,
+                                        Actions = new List<EMTriggerAction>
                                         {
-                                            Parameter = 0
-                                        },
-                                        new EMTriggerAction
-                                        {
-                                            Parameter = 1
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 0
+                                            },
+                                            new EMTriggerAction
+                                            {
+                                                Parameter = 1
+                                            }
                                         }
-                                    }
+                                    },
+                                    Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads3.json"))[TRLevelNames.OBELISK]
                                 },
-                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("obeliskpuzzleantipads3.json"))[TRLevelNames.OBELISK]
                             },
                             new EMRefaceFunction
                             {
