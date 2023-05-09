@@ -29,7 +29,39 @@ namespace TREnvironmentControl
 
             TRRoom room29 = level.Rooms[29];
 
-            mapping.All = new EMEditorSet();
+            mapping.All = new EMEditorSet
+            {
+                new EMTriggerFunction
+                {
+                    Comments = "Ensure the enemies in room 15 are always triggered rather than only from the invisible platform.",
+                    EMType = EMType.Trigger,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 47616,
+                            Y = -5376,
+                            Z = 33280,
+                            Room = 14
+                        }
+                    },
+                    Trigger = new EMTrigger
+                    {
+                        Mask = 31,
+                        Actions = new List<EMTriggerAction>
+                        {
+                            new EMTriggerAction
+                            {
+                                Parameter = 34
+                            },
+                            new EMTriggerAction
+                            {
+                                Parameter = 35
+                            }
+                        }
+                    }
+                }
+            };
 
             mapping.NonPurist = new EMEditorSet
             {

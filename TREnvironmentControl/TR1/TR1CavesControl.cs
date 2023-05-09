@@ -61,6 +61,29 @@ namespace TREnvironmentControl
                                     level.Rooms[10].RoomData.Rectangles[299].Vertices[0],
                                 }
                             }
+                        },
+                        [30] = new List<TRFace3>
+                        {
+                            new TRFace3
+                            {
+                                Texture = 72,
+                                Vertices = new ushort[]
+                                {
+                                    level.Rooms[30].RoomData.Rectangles[150].Vertices[3],
+                                    level.Rooms[30].RoomData.Rectangles[175].Vertices[2],
+                                    level.Rooms[30].RoomData.Rectangles[150].Vertices[0],
+                                }
+                            },
+                            new TRFace3
+                            {
+                                Texture = 72,
+                                Vertices = new ushort[]
+                                {
+                                    level.Rooms[30].RoomData.Triangles[21].Vertices[0],
+                                    level.Rooms[30].RoomData.Rectangles[176].Vertices[3],
+                                    level.Rooms[30].RoomData.Rectangles[176].Vertices[2],
+                                }
+                            }
                         }
                     },
                     Quads = new Dictionary<short, List<TRFace4>>
@@ -76,6 +99,30 @@ namespace TREnvironmentControl
                                     level.Rooms[1].RoomData.Rectangles[73].Vertices[1],
                                     level.Rooms[1].RoomData.Rectangles[73].Vertices[0],
                                     level.Rooms[1].RoomData.Rectangles[75].Vertices[0],
+                                }
+                            }
+                        }
+                    }
+                },
+                new EMModifyFaceFunction
+                {
+                    Comments = "Patch a hole in the wall in room 14.",
+                    EMType = EMType.ModifyFace,
+                    Modifications = new EMFaceModification[]
+                    {
+                        new EMFaceModification
+                        {
+                            FaceIndex = 108,
+                            RoomNumber = 14,
+                            VertexChanges = new Dictionary<int, TRVertex>
+                            {
+                                [0] = new TRVertex
+                                {
+                                    Y = 256
+                                },
+                                [1] = new TRVertex
+                                {
+                                    Y = -512
                                 }
                             }
                         }
@@ -1818,27 +1865,32 @@ namespace TREnvironmentControl
                                 }
                             }
                         },
-                        new EMTriggerFunction
+                        new EMPlaceholderFunction
                         {
-                            Comments = "Puzzle antipads.",
-                            EMType = EMType.Trigger,
-                            Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cavesantipads1.json"))[Level],
-                            Trigger = new EMTrigger
+                            Comments = "Placeholder for easy mode.",
+                            EMType = EMType.NOOP,
+                            HardVariant = new EMTriggerFunction
                             {
-                                Mask = 31,
-                                TrigType = FDTrigType.Antipad,
-                                Actions = new List<EMTriggerAction>
+                                Comments = "Puzzle antipads.",
+                                EMType = EMType.Trigger,
+                                Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("cavesantipads1.json"))[Level],
+                                Trigger = new EMTrigger
                                 {
-                                    new EMTriggerAction
+                                    Mask = 31,
+                                    TrigType = FDTrigType.Antipad,
+                                    Actions = new List<EMTriggerAction>
                                     {
-                                        Parameter = -2
-                                    },
-                                    new EMTriggerAction
-                                    {
-                                        Parameter = -1
+                                        new EMTriggerAction
+                                        {
+                                            Parameter = -2
+                                        },
+                                        new EMTriggerAction
+                                        {
+                                            Parameter = -1
+                                        }
                                     }
                                 }
-                            }
+                            },
                         },
                         new EMTriggerFunction
                         {

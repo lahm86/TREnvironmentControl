@@ -26,6 +26,7 @@ namespace TREnvironmentControl
             TRLevel level4 = GetTR1Level(TRLevelNames.FOLLY);
 
             TRRoom room90 = level.Rooms[90];
+            TRRoom room38 = level.Rooms[38];
             mapping.NonPurist = new EMEditorSet
             {
                 new EMRefaceFunction
@@ -71,10 +72,1095 @@ namespace TREnvironmentControl
                         }
                     }
                 },
-                // Return path
+                // Return paths
                 new EMCreateRoomFunction
                 {
-                    Comments = "Create rooms for a return path.",
+                    Comments = "Create rooms for a return path (scythe room to the beginning).",
+                    EMType = EMType.CreateRoom,
+                    Height = 4,
+                    Width = 4,
+                    Depth = 4,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 2 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-2048,
+                        Y = -5376-1024-256,
+                        Z = 79872-1024,
+                    },
+                    FloorHeights = new Dictionary<sbyte, List<int>>
+                    {
+                        [-127] = new List<int> { 9 }
+                    }
+                },
+                new EMCreateRoomFunction
+                {
+                    EMType = EMType.CreateRoom,
+                    Height = 4,
+                    Width = 3,
+                    Depth = 20,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 18 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024//room90.Lights[0].Fade,
+                        },
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-2048,
+                        Y = -5376-1024-256-1024,
+                        Z = 79872-10240*2+2048,
+                    }
+                },
+                new EMCreateRoomFunction
+                {
+                    EMType = EMType.CreateRoom,
+                    Height = 4,
+                    Width = 3,
+                    Depth = 20,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 18 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        },
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-2048,
+                        Y = -5376-1024-256-1024,
+                        Z = 79872-10240*4+4096,
+                    }
+                },
+                new EMCreateRoomFunction
+                {
+                    EMType = EMType.CreateRoom,
+                    Height = 4,
+                    Width = 3,
+                    Depth = 20,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 18 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        },
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-2048,
+                        Y = -5376-1024-256-1024,
+                        Z = 79872-10240*6+4096+2048,
+                    }
+                },
+                new EMCreateRoomFunction
+                {
+                    EMType = EMType.CreateRoom,
+                    Height = 4,
+                    Width = 3,
+                    Depth = 10,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 8 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        },
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -512,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-2048,
+                        Y = -5376-1024-256-1024,
+                        Z = 79872-10240*7+4096+2048+2048,
+                    }
+                },
+                new EMCreateRoomFunction
+                {
+                    EMType = EMType.CreateRoom,
+                    Height = 6,
+                    Width = 10,
+                    Depth = 3,
+                    Textures = new EMTextureGroup
+                    {
+                        Floor = 89,
+                        Ceiling = 89,
+                        Wall4 = 14,
+                        Wall2 = 115,
+                        Wall1 = 117,
+                        WallAlignment = Direction.Down
+                    },
+                    AmbientLighting = room38.AmbientIntensity,
+                    DefaultVertex = new EMRoomVertex
+                    {
+                        Lighting = room38.RoomData.Vertices[room38.RoomData.Rectangles[0].Vertices[1]].Lighting
+                    },
+                    Lights = new EMRoomLight[]
+                    {
+                        new EMRoomLight
+                        {
+                            X = 8*1024 + 512,
+                            Y = -1024,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+512//room90.Lights[0].Fade,
+                        },
+                        new EMRoomLight
+                        {
+                            X = 1*1024 + 512,
+                            Y = -1024,
+                            Z = 1 * 1024 + 512,
+                            Intensity1 = room38.Lights[0].Intensity,
+                            Fade1 = 1024+768//room90.Lights[0].Fade,
+                        }
+                    },
+                    LinkedLocation = new EMLocation
+                    {
+                        X = 39424,
+                        Y = -5376,
+                        Z = 81408,
+                        Room = 38
+                    },
+                    Location = new EMLocation
+                    {
+                        X = 37888-1024,
+                        Y = -5376-1024-256-1024+512,
+                        Z = 79872-10240*7+4096+2048+2048,
+                    },
+                    FloorHeights = new Dictionary<sbyte, List<int>>
+                    {
+                        [-1] = new List<int> { 22},
+                        [-2] = new List<int> { 4, 7, 10, 13, 16, 19}
+                    }
+                },
+                new EMVisibilityPortalFunction
+                {
+                    Comments = "Make visibility portals.",
+                    EMType = EMType.VisibilityPortal,
+                    Portals = new List<EMVisibilityPortal>
+                    {
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = 38,
+                            AdjoiningRoom = -6,
+                            Normal = new TRVertex
+                            {
+                                X = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 5 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 6 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656,
+                                    Z = 6 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656,
+                                    Z = 5 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -6,
+                            AdjoiningRoom = 38,
+                            Normal = new TRVertex
+                            {
+                                X = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 3 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -6656,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -6656,
+                                    Z = 3 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -6,
+                            AdjoiningRoom = -5,
+                            Normal = new TRVertex
+                            {
+                                Y = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -5,
+                            AdjoiningRoom = -6,
+                            Normal = new TRVertex
+                            {
+                                Y = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 18 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 18 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -5,
+                            AdjoiningRoom = -4,
+                            Normal = new TRVertex
+                            {
+                                Z = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -4,
+                            AdjoiningRoom = -5,
+                            Normal = new TRVertex
+                            {
+                                Z = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                }
+                            }
+                        },
+
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -4,
+                            AdjoiningRoom = -3,
+                            Normal = new TRVertex
+                            {
+                                Z = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -3,
+                            AdjoiningRoom = -4,
+                            Normal = new TRVertex
+                            {
+                                Z = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 19 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -3,
+                            AdjoiningRoom = -2,
+                            Normal = new TRVertex
+                            {
+                                Z = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -2,
+                            AdjoiningRoom = -3,
+                            Normal = new TRVertex
+                            {
+                                Z = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 9 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 9 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 9 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 9 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -2,
+                            AdjoiningRoom = -1,
+                            Normal = new TRVertex
+                            {
+                                X = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 2 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -1,
+                            AdjoiningRoom = -2,
+                            Normal = new TRVertex
+                            {
+                                X = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-2048,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 1 * 1024,
+                                    Y = -6656-1024,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = -1,
+                            AdjoiningRoom = 17,
+                            Normal = new TRVertex
+                            {
+                                Y = -1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 8 * 1024,
+                                    Y = -7424+256,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 9 * 1024,
+                                    Y = -7424+256,
+                                    Z = 2 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 9 * 1024,
+                                    Y = -7424+256,
+                                    Z = 1 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 8 * 1024,
+                                    Y = -7424+256,
+                                    Z = 1 * 1024
+                                }
+                            }
+                        },
+                        new EMVisibilityPortal
+                        {
+                            BaseRoom = 17,
+                            AdjoiningRoom = -1,
+                            Normal = new TRVertex
+                            {
+                                Y = 1
+                            },
+                            Vertices = new TRVertex[]
+                            {
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -7168,
+                                    Z = 6 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -7168,
+                                    Z = 6 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 3 * 1024,
+                                    Y = -7168,
+                                    Z = 7 * 1024
+                                },
+                                new TRVertex
+                                {
+                                    X = 2 * 1024,
+                                    Y = -7168,
+                                    Z = 7 * 1024
+                                }
+                            }
+                        },
+                    }
+                },
+                new EMHorizontalCollisionalPortalFunction
+                {
+                    Comments = "Make collisional portals.",
+                    EMType = EMType.HorizontalCollisionalPortal,
+                    Portals = new Dictionary<short, Dictionary<short, EMLocation[]>>
+                    {
+                        [38] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-6] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 39424-1024,
+                                    Y = -5376,
+                                    Z = 81408
+                                }
+                            },
+                        },
+                        [-6] = new Dictionary<short, EMLocation[]>
+                        {
+                            [38] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 39424,
+                                    Y = -5376,
+                                    Z = 81408
+                                }
+                            },
+                            [-5] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680+1024,
+                                    Z = 79360
+                                }
+                            },
+                        },
+                        [-5] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-4] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 61952
+                                }
+                            }
+                        },
+                        [-4] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-5] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 61952+1024
+                                }
+                            },
+                            [-3] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 43520
+                                }
+                            }
+                        },
+                        [-3] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-4] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 43520+1024
+                                }
+                            },
+                            [-2] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 25088
+                                }
+                            }
+                        },
+                        [-2] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-3] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 37376,
+                                    Y = -7680,
+                                    Z = 25088+1024
+                                }
+                            },
+                            [-1] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 38400,
+                                    Y = -7680,
+                                    Z = 17920
+                                }
+                            }
+                        },
+                        [-1] = new Dictionary<short, EMLocation[]>
+                        {
+                            [-2] = new EMLocation[]
+                            {
+                                new EMLocation
+                                {
+                                    X = 38400-1024,
+                                    Y = -7680,
+                                    Z = 17920
+                                }
+                            }
+                        },
+                    }
+                },
+                new EMVerticalCollisionalPortalFunction
+                {
+                    EMType = EMType.VerticalCollisionalPortal,
+                    Ceiling = new EMLocation
+                    {
+                        X = 37376,
+                        Y = -7680,
+                        Z = 79360 + 1024,
+                        Room = -5
+                    },
+                    Floor = new EMLocation
+                    {
+                        X = 37376,
+                        Y = -7680+1024,
+                        Z = 79360 + 1024,
+                        Room = -6
+                    },
+                    InheritFloorBox = true
+                },
+                new EMVerticalCollisionalPortalFunction
+                {
+                    EMType = EMType.VerticalCollisionalPortal,
+                    Ceiling = new EMLocation
+                    {
+                        X = 44544 +1024,
+                        Y = -7424,
+                        Z = 17920,
+                        Room = -1
+                    },
+                    Floor = new EMLocation
+                    {
+                        X = 44544 +1024,
+                        Y = -7424+1024,
+                        Z = 17920,
+                        Room = 17
+                    },
+                    InheritFloorBox = true
+                },
+                new EMRefaceFunction
+                {
+                    EMType = EMType.Reface,
+                    TextureMap = new EMTextureMap
+                    {
+                        [46] = new EMGeometryMap
+                        {
+                            [-5] = new Dictionary<EMTextureFaceType, int[]>
+                            {
+                                [EMTextureFaceType.Rectangles] = new int[] { 1 }
+                            },
+                            [-4] = new Dictionary<EMTextureFaceType, int[]>
+                            {
+                                [EMTextureFaceType.Rectangles] = new int[] { 1,70 }
+                            },
+                            [-3] = new Dictionary<EMTextureFaceType, int[]>
+                            {
+                                [EMTextureFaceType.Rectangles] = new int[] { 1,70 }
+                            },
+                            [-2] = new Dictionary<EMTextureFaceType, int[]>
+                            {
+                                [EMTextureFaceType.Rectangles] = new int[] { 1,30 }
+                            },
+                        }
+                    }
+                },
+                new EMRemoveFaceFunction
+                {
+                    Comments = "Remove faces for the portals.",
+                    EMType = EMType.RemoveFace,
+                    GeometryMap = new EMGeometryMap
+                    {
+                        [17] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 35 }
+                        },
+                        [38] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 19 },
+                        },
+                        [-6] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 1,12 }
+                        },
+                        [-5] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 4,69 }
+                        },
+                        [-4] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 4,72 }
+                        },
+                        [-3] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 4,72 }
+                        },
+                        [-2] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 3,32 }
+                        },
+                        [-1] = new Dictionary<EMTextureFaceType, int[]>
+                        {
+                            [EMTextureFaceType.Rectangles] = new int[] { 2,32 }
+                        },
+                    }
+                },
+                new EMTriggerFunction
+                {
+                    Comments = "Play some music in the long corridor.",
+                    EMType = EMType.Trigger,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 37376,
+                            Y = -7680,
+                            Z = 79360-1024,
+                            Room = -5
+                        }
+                    },
+                    Trigger = new EMTrigger
+                    {
+                        Mask = 31,
+                        Actions = new List<EMTriggerAction>
+                        {
+                            new EMTriggerAction
+                            {
+                                Action = FDTrigAction.PlaySoundtrack,
+                                Parameter = 10
+                            },
+                        }
+                    }
+                },
+                new EMGenerateLightFunction
+                {
+                    Comments = "Auto-generate vertex lighting in the new rooms.",
+                    EMType = EMType.GenerateLight,
+                    RoomIndices = new List<short> { -1,-2,-3,-4,-5,-6 }
+                },
+
+                new EMCreateRoomFunction
+                {
+                    Comments = "Create rooms for a return path (temple to pushblock area).",
                     EMType = EMType.CreateRoom,
                     Height = 18,
                     Width = 4,

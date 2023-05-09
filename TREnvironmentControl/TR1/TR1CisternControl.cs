@@ -26,7 +26,24 @@ namespace TREnvironmentControl
 
             mapping.Any = new List<EMEditorSet>
             {
+            };
 
+            mapping.NonPurist = new EMEditorSet
+            {
+                new EMAddEntityFunction
+                {
+                    Comments = "Add a pushblock to allow returning to the start.",
+                    EMType = EMType.AddEntity,
+                    TypeID = (short)TREntities.PushBlock1,
+                    Intensity = level.Entities[7].Intensity,
+                    Location = new EMLocation
+                    {
+                        X = 46592-2048,
+                        Y = -3328,
+                        Z = 70144,
+                        Room = 7
+                    }
+                }
             };
 
             mapping.AllWithin = new List<List<EMEditorSet>>

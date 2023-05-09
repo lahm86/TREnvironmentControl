@@ -350,7 +350,7 @@ namespace TREnvironmentControl
                 },
                 new EMAddFaceFunction
                 {
-                    Comments = "Add the missing faces in the pit in the OG secret garden area.",
+                    Comments = "Add the missing faces in the pit in the OG secret garden area and room 53.",
                     EMType = EMType.AddFace,
                     Quads = new Dictionary<short, List<TRFace4>>
                     {
@@ -379,6 +379,22 @@ namespace TREnvironmentControl
                                 Texture = level.Rooms[2].RoomData.Rectangles[49].Texture
                             }
                         },
+                    },
+                    Triangles = new Dictionary<short, List<TRFace3>>
+                    {
+                        [53] = new List<TRFace3>
+                        {
+                            new TRFace3
+                            {
+                                Texture = 7,
+                                Vertices = new ushort[]
+                                {
+                                    level.Rooms[53].RoomData.Rectangles[3].Vertices[1],
+                                    level.Rooms[53].RoomData.Rectangles[0].Vertices[3],
+                                    level.Rooms[53].RoomData.Rectangles[3].Vertices[2],                                    
+                                }
+                            }
+                        }
                     }
                 },
                 new EMClickFunction

@@ -805,49 +805,83 @@ namespace TREnvironmentControl
                         Room = 50
                     }
                 },
-                //new EMRemoveTriggerFunction
-                //{
-                //    Comments= "Don't close door 143 so the return path is possible.",
-                //    EMType = EMType.RemoveTrigger,
-                //    Locations = new List<EMLocation>
-                //    {
-                //        new EMLocation
-                //        {
-                //            X = 45568,
-                //            Y = -14592,
-                //            Z = 59904,
-                //            Room = 73
-                //        },
-                //        new EMLocation
-                //        {
-                //            X = 45568 + 1024,
-                //            Y = -14592,
-                //            Z = 59904,
-                //            Room = 73
-                //        },
-                //        new EMLocation
-                //        {
-                //            X = 45568 + 2048,
-                //            Y = -14592,
-                //            Z = 59904,
-                //            Room = 73
-                //        },
-                //        new EMLocation
-                //        {
-                //            X = 45568 + 3072,
-                //            Y = -14592,
-                //            Z = 59904,
-                //            Room = 73
-                //        },
-                //        new EMLocation
-                //        {
-                //            X = 45568 + 4096,
-                //            Y = -14592,
-                //            Z = 59904,
-                //            Room = 73
-                //        }
-                //    }
-                //}
+                new EMRemoveTriggerFunction
+                {
+                    Comments= "Remove the triggers that close door 143.",
+                    EMType = EMType.RemoveTrigger,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 45568,
+                            Y = -14592,
+                            Z = 59904,
+                            Room = 73
+                        },
+                        new EMLocation
+                        {
+                            X = 45568 + 1024,
+                            Y = -14592,
+                            Z = 59904,
+                            Room = 73
+                        },
+                        new EMLocation
+                        {
+                            X = 45568 + 2048,
+                            Y = -14592,
+                            Z = 59904,
+                            Room = 73
+                        },
+                        new EMLocation
+                        {
+                            X = 45568 + 3072,
+                            Y = -14592,
+                            Z = 59904,
+                            Room = 73
+                        },
+                        new EMLocation
+                        {
+                            X = 45568 + 4096,
+                            Y = -14592,
+                            Z = 59904,
+                            Room = 73
+                        }
+                    }
+                },
+                new EMTriggerFunction
+                {
+                    Comments = "Make a timed trigger for the door to open/close.",
+                    EMType = EMType.Trigger,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 47616,
+                            Y = -13056,
+                            Z = 54784,
+                            Room = 74
+                        }
+                    },
+                    Trigger = new EMTrigger
+                    {
+                        Mask = 31,
+                        Timer = 20,
+                        Actions = new List<EMTriggerAction>
+                        {
+                            new EMTriggerAction
+                            {
+                                Parameter = 143
+                            }
+                        }
+                    }
+                },
+                new EMModifyEntityFunction
+                {
+                    Comments = "Don't activate the door by default.",
+                    EMType = EMType.ModifyEntity,
+                    EntityIndex = 143,
+                    Flags = 0
+                }
             };
 
             mapping.AllWithin = new List<List<EMEditorSet>>
