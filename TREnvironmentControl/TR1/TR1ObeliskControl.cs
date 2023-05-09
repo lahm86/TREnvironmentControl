@@ -43,6 +43,23 @@ namespace TREnvironmentControl
                         }
                     }
                 },
+                new EMConvertTriggerFunction
+                {
+                    Comments = "Fix the wrong flipmap trigger type in room 66.",
+                    EMType = EMType.ConvertTrigger,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 43520,
+                            Y = -1152 + 256,
+                            Z = 56832,
+                            Room = 66
+                        }
+                    },
+                    TrigType = FDTrigType.Switch,
+                    SwitchOrKeyRef = 34
+                },
             };
 
             mapping.Any = new List<EMEditorSet>
