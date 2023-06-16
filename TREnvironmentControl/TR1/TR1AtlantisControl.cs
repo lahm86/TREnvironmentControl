@@ -9125,8 +9125,12 @@ namespace TREnvironmentControl
                 },
                 new EMConvertEnemyFunction
                 {
-                    Comments = "Bacon Lara doesn't work when mirrored, so make an alternative scenario in this room.",
+                    Comments = "Bacon Lara doesn't work when mirrored, so make an alternative scenario in this room (TombATI only).",
                     EMType = EMType.ConvertEnemy,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     EntityIndices = new List<int> { 126 },
                     NewEnemyType = EnemyType.Land,
                     Exclusions = new List<short>
@@ -9140,6 +9144,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "Move the enemy off the slope otherwise it's likely to get stuck.",
                     EMType = EMType.MoveEntity,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     EntityIndex = 126,
                     TargetLocation = new EMLocation
                     {
@@ -9153,12 +9161,20 @@ namespace TREnvironmentControl
                 {
                     Comments = "Remove the redundant camera triggers from the room.",
                     EMType = EMType.RemoveTrigger,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     Locations = JsonConvert.DeserializeObject<Dictionary<string, List<EMLocation>>>(GetResource("redundantbacontriggers.json"))[Level]
                 },
                 new EMConvertEntityFunction
                 {
                     Comments = "Turn the trapdoor into a pickup.",
                     EMType = EMType.ConvertEntity,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     EntityIndex = 32,
                     NewEntityType = (short)TREntities.UziAmmo_S_P
                 },
@@ -9166,6 +9182,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "And move it.",
                     EMType = EMType.MoveEntity,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     EntityIndex = 32,
                     TargetLocation = new EMLocation
                     {
@@ -9179,6 +9199,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "Moves the switch to the other side of the room.",
                     EMType = EMType.MoveEntity,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     EntityIndex = 30,
                     TargetLocation = new EMLocation
                     {
@@ -9193,6 +9217,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "Amend faces for above.",
                     EMType = EMType.Reface,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     TextureMap = new EMTextureMap
                     {
                         [32] = new EMGeometryMap
@@ -9215,6 +9243,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "Add a trigger to open the door, now on a timer.",
                     EMType = EMType.Trigger,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     Locations = new List<EMLocation>
                     {
                         new EMLocation
@@ -9244,6 +9276,10 @@ namespace TREnvironmentControl
                 {
                     Comments = "Placeholder for easy mode.",
                     EMType = EMType.NOOP,
+                    Tags = new List<EMTag>
+                    {
+                        EMTag.NonCommunityPatchOnly
+                    },
                     HardVariant = new EMConvertTriggerFunction
                     {
                         Comments = "Tighter timer in hard mode.",
