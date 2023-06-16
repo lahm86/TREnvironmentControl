@@ -152,7 +152,25 @@ namespace TREnvironmentControl
             };
             mapping.All = new EMEditorSet
             {
-
+                new EMReplaceTriggerActionParameterFunction
+                {
+                    Comments = "Fix the final secret if secret randomization is not enabled (if the trigger isn't there, nothing is done).",
+                    EMType = EMType.ReplaceTriggerActionParameterFunction,
+                    Locations = new List<EMLocation>
+                    {
+                        new EMLocation
+                        {
+                            X = 69120,
+                            Z = 51712,
+                            Room = 64
+                        }
+                    },
+                    Action = new EMTriggerAction
+                    {
+                        Action = FDTrigAction.SecretFound,
+                        Parameter = 2
+                    }
+                }
             };
 
             mapping.Any = new List<EMEditorSet>
@@ -1584,6 +1602,10 @@ namespace TREnvironmentControl
                         {
                             Comments = "Remove some faces - but not the floor itself.",
                             EMType = EMType.RemoveFace,
+                            Tags = new List<EMTag>
+                            {
+                                EMTag.TrapChange
+                            },
                             GeometryMap = new EMGeometryMap
                             {
                                 [36] = new Dictionary<EMTextureFaceType, int[]>
@@ -3643,6 +3665,358 @@ namespace TREnvironmentControl
                                 Y = -5120,
                                 Z = 15872,
                                 Room = 3
+                            }
+                        }
+                    }
+                },
+                new EMConditionalSingleEditorSet
+                {
+                    Condition = new EMModelExistsCondition
+                    {
+                        ConditionType = EMConditionType.ModelExists,
+                        Comments = "If Adam isn't here, change the default way the door opens.",
+                        ModelID = (uint)TREntities.Adam
+                    },
+                    OnFalse = new EMEditorSet
+                    {
+                        new EMCreateRoomFunction
+                        {
+                            Comments = "Make a room to house a switch.",
+                            EMType = EMType.CreateRoom,
+                            Height = 12,
+                            Width = 4,
+                            Depth = 4,
+                            Textures = new EMTextureGroup
+                            {
+                                Floor = 118,
+                                Ceiling = 28,
+                                Wall4 = 28,
+                                Wall2 = 69
+                               // WallAlignment = Direction.Down
+                            },
+                            AmbientLighting = level.Rooms[4].AmbientIntensity,
+                            DefaultVertex = new EMRoomVertex
+                            {
+                                Lighting = level.Rooms[4].RoomData.Vertices[level.Rooms[4].RoomData.Rectangles[97].Vertices[0]].Lighting
+                            },
+                            Lights = new EMRoomLight[]
+                            {
+                                new EMRoomLight
+                                {
+                                    X = 2048 + 512,
+                                    Y = -768,
+                                    Z = 2048 - 512,
+                                    Intensity1 = 2048,
+                                    Fade1 = 2048,
+                                },
+                                new EMRoomLight
+                                {
+                                    X = 1024 + 512,
+                                    Y = -768-2048,
+                                    Z = 2048 + 512,
+                                    Intensity1 = 2048,
+                                    Fade1 = 2048,
+                                },
+                            },
+                            LinkedLocation = new EMLocation
+                            {
+                                X = 58880,
+                                Y = -15616,
+                                Z = 8704,
+                                Room = 36
+                            },
+                            Location = new EMLocation
+                            {
+                                X = 58368-1024,
+                                Y = -15616-1024+3072-1024,
+                                Z = 4096,
+                            },
+                            FloorHeights = new Dictionary<sbyte, List<int>>
+                            {
+                                [-8] = new List<int>{6},
+                                [-4] = new List<int>{5},
+                                //[-4] = new List<int>{9},
+                                [-127] = new List<int>{10}
+                            },
+                            CeilingHeights = new Dictionary<sbyte, List<int>>
+                            {
+                                [4] = new List<int> { 9 },
+                                //[10] = new List<int> { 13 }
+                            }
+                        },
+
+                        new EMHorizontalCollisionalPortalFunction
+                        {
+                            Comments = "Collisional portals.",
+                            EMType = EMType.HorizontalCollisionalPortal,
+                            Portals = new Dictionary<short, Dictionary<short, EMLocation[]>>
+                            {
+                                [36] = new Dictionary<short, EMLocation[]>
+                                {
+                                    [-1] = new EMLocation[]
+                                    {
+                                        new EMLocation
+                                        {
+                                            X = 58880,
+                                            Y = -16640,
+                                            Z = 6656
+                                        }
+                                    }
+                                },
+                                [-1] = new Dictionary<short, EMLocation[]>
+                                {
+                                    [36] = new EMLocation[]
+                                    {
+                                        new EMLocation
+                                        {
+                                            X = 58880,
+                                            Y = -16640,
+                                            Z = 6656+1024
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        new EMVisibilityPortalFunction
+                        {
+                            Comments = "Visibility portals.",
+                            EMType = EMType.VisibilityPortal,
+                            Portals = new List<EMVisibilityPortal>
+                            {
+                                new EMVisibilityPortal
+                                {
+                                    BaseRoom = 36,
+                                    AdjoiningRoom = -1,
+                                    Normal = new TRVertex
+                                    {
+                                        Z = 1
+                                    },
+                                    Vertices = new TRVertex[]
+                                    {
+                                        new TRVertex
+                                        {
+                                            X = 5 * 1024,
+                                            Y = -16640-1024,
+                                            Z = 1 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 4 * 1024,
+                                            Y = -16640-1024,
+                                            Z = 1 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 4 * 1024,
+                                            Y = -16640,
+                                            Z = 1 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 5 * 1024,
+                                            Y = -16640,
+                                            Z = 1 * 1024
+                                        }
+                                    }
+                                },
+                                new EMVisibilityPortal
+                                {
+                                    BaseRoom = -1,
+                                    AdjoiningRoom = 36,
+                                    Normal = new TRVertex
+                                    {
+                                        Z = -1
+                                    },
+                                    Vertices = new TRVertex[]
+                                    {
+                                        new TRVertex
+                                        {
+                                            X = 1 * 1024,
+                                            Y = -16640-1024,
+                                            Z = 3 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 2 * 1024,
+                                            Y = -16640-1024,
+                                            Z = 3 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 2 * 1024,
+                                            Y = -16640,
+                                            Z = 3 * 1024
+                                        },
+                                        new TRVertex
+                                        {
+                                            X = 1 * 1024,
+                                            Y = -16640,
+                                            Z = 3 * 1024
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        new EMRefaceFunction
+                        {
+                            Comments = "Add a lever texture.",
+                            EMType = EMType.Reface,
+                            TextureMap = new EMTextureMap
+                            {
+                                [42] = new EMGeometryMap
+                                {
+                                    [-1] = new Dictionary<EMTextureFaceType, int[]>
+                                    {
+                                        [EMTextureFaceType.Rectangles] = new int[] { 18 }
+                                    }
+                                }
+                            }
+                        },
+                        new EMRemoveFaceFunction
+                        {
+                            Comments= "Remove faces for portals.",
+                            EMType = EMType.RemoveFace,
+                            GeometryMap = new EMGeometryMap
+                            {
+                                [-1] = new Dictionary<EMTextureFaceType, int[]>
+                                {
+                                    [EMTextureFaceType.Rectangles] = new int[] { 11 }
+                                }
+                            }
+                        },
+                        new EMModifyFaceFunction
+                        {
+                            EMType = EMType.ModifyFace,
+                            Modifications = new EMFaceModification[]
+                            {
+                                new EMFaceModification
+                                {
+                                    RoomNumber  = 36,
+                                    FaceIndex = 47,
+                                    VertexChanges = new Dictionary<int, TRVertex>
+                                    {
+                                        [2] = new TRVertex
+                                        {
+                                            Y = -1024
+                                        },
+                                        [3] = new TRVertex
+                                        {
+                                            Y = -1024
+                                        }
+                                    }
+                                },
+                            }
+                        },
+                        new EMGenerateLightFunction
+                        {
+                            Comments = "Let there be light.",
+                            EMType = EMType.GenerateLight,
+                            RoomIndices = new List<short> { -1 }
+                        },
+                        new EMAddEntityFunction
+                        {
+                            Comments = "Add a switch.",
+                            EMType = EMType.AddEntity,
+                            Location = new EMLocation
+                            {
+                                X = 59904,
+                                Y = -14592,
+                                Z = 5632,
+                                Room = -1,
+                                Angle = 16384
+                            },
+                            TypeID = (short)TREntities.WallSwitch,
+                            Intensity = level.Entities[7].Intensity
+                        },
+                        new EMDuplicateTriggerFunction
+                        {
+                            Comments = "Duplicate one of the heavy triggers to capture everything Adam would trigger.",
+                            EMType = EMType.DuplicateTrigger,
+                            BaseLocation = new EMLocation
+                            {
+                                X = 61952,
+                                Y = -15616,
+                                Z = 14848,
+                                Room = 36
+                            },
+                            Locations = new List<EMLocation>
+                            {
+                                new EMLocation
+                                {
+                                    X = 59904,
+                                    Y = -14592,
+                                    Z = 5632,
+                                    Room = -1,
+                                }
+                            }
+                        },
+                        new EMConvertTriggerFunction
+                        {
+                            Comments = "Convert the duplicated trigger into a switch type.",
+                            EMType = EMType.ConvertTrigger,
+                            Location = new EMLocation
+                            {
+                                X = 59904,
+                                Y = -14592,
+                                Z = 5632,
+                                Room = -1,
+                            },
+                            TrigType = FDTrigType.Switch,
+                            SwitchOrKeyRef = -1
+                        },
+                        new EMRemoveTriggerFunction
+                        {
+                            Comments = "Clear the heavy triggers from the platform.",
+                            EMType = EMType.RemoveTrigger,
+                            Rooms = new List<int> { 36 },
+                            TrigTypes = new List<FDTrigType> { FDTrigType.HeavyTrigger }
+                        },
+                        new EMAddEntityFunction
+                        {
+                            Comments = "Add a door.",
+                            EMType = EMType.AddEntity,
+                            Location = new EMLocation
+                            {
+                                X = 58880,
+                                Y = -16640,
+                                Z = 6656+1024,
+                                Room = -1,
+                            },
+                            TypeID = (short)TREntities.Door1,
+                            Intensity = level.Entities[86].Intensity
+                        },
+                        new EMAddEntityFunction
+                        {
+                            Comments = "Add another switch.",
+                            EMType = EMType.AddEntity,
+                            Location = new EMLocation
+                            {
+                                X = 65024,
+                                Y = -15616,
+                                Z = 12800,
+                                Room = 36,
+                                Angle = 16384
+                            },
+                            TypeID = (short)TREntities.WallSwitch,
+                            Intensity = level.Entities[7].Intensity
+                        },
+                        new EMTriggerFunction
+                        {
+                            Comments= "Trigger the new door.",
+                            EMType = EMType.Trigger,
+                            EntityLocation = -1,
+                            Trigger = new EMTrigger
+                            {
+                                Mask = 31,
+                                TrigType = FDTrigType.Switch,
+                                SwitchOrKeyRef = -1,
+                                Actions = new List<EMTriggerAction>
+                                {
+                                    new EMTriggerAction
+                                    {
+                                        Parameter = -2
+                                    }
+                                }
                             }
                         }
                     }

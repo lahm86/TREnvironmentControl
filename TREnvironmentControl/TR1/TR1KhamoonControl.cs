@@ -111,7 +111,7 @@ namespace TREnvironmentControl
                 },
                 new EMTriggerFunction
                 {
-                    Comments = "Trigger the new enemy.",
+                    Comments = "Trigger the new enemy (one shot in case Pierre).",
                     EMType = EMType.Trigger,
                     Locations = new List<EMLocation>
                     {
@@ -134,6 +134,7 @@ namespace TREnvironmentControl
                     {
                         Mask = 31,
                         TrigType = FDTrigType.Trigger,
+                        OneShot = true,
                         Actions = new List<EMTriggerAction>
                         {
                             new EMTriggerAction

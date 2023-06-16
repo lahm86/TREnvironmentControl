@@ -29,7 +29,9 @@ namespace TREnvironmentControl
 
             TRRoom room29 = level.Rooms[29];
 
-            mapping.All = new EMEditorSet
+            mapping.All = new EMEditorSet();
+
+            mapping.NonPurist = new EMEditorSet
             {
                 new EMTriggerFunction
                 {
@@ -60,11 +62,7 @@ namespace TREnvironmentControl
                             }
                         }
                     }
-                }
-            };
-
-            mapping.NonPurist = new EMEditorSet
-            {
+                },
                 new EMAddFaceFunction
                 {
                     Comments = "Patch the hole in the sphinx.",
@@ -1790,7 +1788,8 @@ namespace TREnvironmentControl
                             }
                         }
                     }
-                }
+                },
+                
             };
 
             mapping.ConditionalAll = new List<EMConditionalSingleEditorSet>
